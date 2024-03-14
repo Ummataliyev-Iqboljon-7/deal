@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  max-width: 1000px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #023047;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+section {
+  width: 100%;
+  height: 90vh;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  justify-items: center;
+  gap: 2rem;
+  padding-block: 2rem;
+}
+body > h1 {
+  color: #fca311;
+  text-align: center;
+  font-size: clamp(1rem, 1.5rem + 1vw, 3rem);
+  padding-inline: 2rem;
+}
+.card {
+  max-width: 360px;
+  flex-grow: 1;
+  align-self: stretch;
+  background-color: #f7ede2;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  transition: 0.4s;
+  text-align: center;
+}
+.card:nth-child(2) {
+  background-color: #ffba08;
+}
+.card:nth-child(3) {
+  background-color: #e85d04;
+}
+.card:hover {
+  transform: scale(1.04);
+}
+.card-header {
+  display: grid;
+  gap: 0.4rem;
+}
+.card-header h1 {
+  color: #14213d;
+  font-weight: 600;
+}
+.card-header p {
+  color: #4a5759;
+  font-size: 0.85rem;
+}
+.card-price {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgb(160, 160, 160);
+  width: 100%;
+}
+.card-features {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.card-feature {
+  display: flex;
+  gap: 0.8rem;
+}
+.card-feature p {
+  text-align: initial;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  font-weight: 500;
+}
+h4 {
+  margin-top: 1rem;
+  text-align: initial;
+}
+img {
+  width: 20px;
+  height: 20px;
+}
+@media (max-width: 1024px) {
+  section {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  .card-header p {
+    /* max-width: 200px; */
+  }
+}
+#filter,
+#limit {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  position: relative;
+  color: white;
+  background-color: purple;
+}
+#filter::after,
+#limit::after {
+  position: absolute;
+  left: -40px;
+  opacity: 0;
+  width: 200px;
+  font-size: 0.8rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: grey;
+}
+#filter::after {
+  content: "Tavarlarni saralash: masalan faqat xiomi telefonlarini ko'rish yoki faqat samsung";
+}
+#limit::after {
+  content: "Chegaralangan narxda tavarlarni topish: 5mlndan 10mlngacha bo'lgan tavarlarni topish yoki boshqa narh oralig'idagilarni";
+}
+#filter:hover::after,
+#limit:hover::after {
+  opacity: 1;
+}
