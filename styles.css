@@ -5,40 +5,48 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
   font-style: normal;
+  color: white;
 }
 body {
   max-width: 1000px;
   height: 100vh;
   margin: 0 auto;
-  background-color: #023047;
+  background-color: #0d1014;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 2rem;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 section {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   justify-items: center;
   gap: 2rem;
   padding-block: 2rem;
 }
+
 body > h1 {
-  color: #fca311;
   text-align: center;
   font-size: clamp(1rem, 1.5rem + 1vw, 3rem);
   padding-inline: 2rem;
 }
+
 .card {
   max-width: 360px;
   flex-grow: 1;
   align-self: stretch;
-  background-color: #f7ede2;
+  background-color: #ffffff08;
   border-radius: 1rem;
   display: flex;
   align-items: center;
@@ -46,26 +54,34 @@ body > h1 {
   padding: 2rem 1.5rem;
   transition: 0.4s;
   text-align: center;
+  color: aliceblue;
+  border: solid white;
+}
+
+.card:nth-child(3):hover {
+  box-shadow: rgba(255, 217, 0, 0.219) 0 0 100px;
 }
 .card:nth-child(2) {
-  background-color: #ffba08;
+  /* border: solid rgb(0, 255, 0); */
+  transform: scale(1.05);
 }
-.card:nth-child(3) {
-  background-color: #e85d04;
+
+.card:nth-child(2):hover {
+  /* border: solid rgb(0, 255, 0); */
+  box-shadow: rgba(51, 255, 0, 0.219) 0 0 100px;
 }
+
 .card:hover {
-  transform: scale(1.04);
+  box-shadow: rgba(255, 0, 0, 0.219) 0 0 100px;
 }
 .card-header {
   display: grid;
   gap: 0.4rem;
 }
 .card-header h1 {
-  color: #14213d;
   font-weight: 600;
 }
 .card-header p {
-  color: #4a5759;
   font-size: 0.85rem;
 }
 .card-price {
@@ -139,4 +155,52 @@ img {
 #filter:hover::after,
 #limit:hover::after {
   opacity: 1;
+}
+
+.vip {
+  color: yellow;
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.397);
+  font-size: 30px;
+}
+
+.select {
+  background: red;
+  border: none;
+  position: fixed;
+  left: 0;
+  transform: rotate(90deg);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.select:hover {
+  box-shadow: rgba(255, 0, 0, 0.219) 0 0 100px;
+}
+
+.overlay{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 50;
+  background: #0000002d;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.hidden_card{
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.hidden_card > p{
+  font-size: 22px;
+  color: black;
+  font-weight: 700;
 }
