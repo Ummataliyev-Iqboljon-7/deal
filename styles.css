@@ -77,6 +77,7 @@ body > h1 {
 }
 .card-header h1.premium {
   font-weight: 600;
+  color: #fdffb6;
 }
 .card-header p {
   font-size: 0.85rem;
